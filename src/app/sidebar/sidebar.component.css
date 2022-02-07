@@ -1,0 +1,50 @@
+.sidebar{
+    display: grid;
+    grid-template-columns: 150px 1fr;
+}
+
+.menu{
+    position:sticky;
+    top: 0px;
+    height: 85vh;
+    /* background-color: rgb(36, 14, 179); */
+    background-color: yellowgreen;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    padding-top: 20px;
+}
+
+.menu div{
+    font-size: 20px;
+    margin-bottom: -8px;
+    cursor: pointer;
+}
+
+.menu div:hover{
+    background-color: rgba(240, 240, 240, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.menu p{
+    font-size: 16px;
+    margin-bottom: 35px;
+}
+
+/* .menu .present{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 28px;
+    color: blue;
+    position: fixed;
+    bottom: 10px;
+} */

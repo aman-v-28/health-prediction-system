@@ -1,0 +1,137 @@
+.container_login{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 450px 1fr;
+    margin: -7.8px;
+}
+
+.class1{
+    text-align: center;
+    font-size: 28px;
+    font-weight: bolder;
+    line-height: 2;
+    /* color: rgb(0, 146, 204); */
+    color: yellowgreen;
+}
+
+.class2{
+    /* background: linear-gradient(to right, rgb(147, 224, 255) 5%, rgb(0, 146, 204)); */
+    background: linear-gradient(to right, rgb(186, 231, 95) 5%, yellowgreen);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.outer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    /* background-color: rgb(78, 194, 240); */
+    background-color: rgb(199, 248, 101);
+}
+
+.image{
+    border-radius: 50%;
+    width: 230px;
+    height: 230px;
+    /* background: linear-gradient(to right, rgb(74, 204, 255), rgb(46, 196, 255)); */
+    background: linear-gradient(to right, rgb(188, 240, 83), yellowgreen);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fas{
+    font-size: 100px;
+    color: green;
+}
+
+/* .glyphicon{
+    font-size: 100px;
+    color: rgb(162, 0, 255);
+    font-weight: lighter;
+} */
+
+.blur{
+    color: rgba(209, 46, 209, 0.1);
+}
+
+.position{
+    position: absolute;
+    top: 20px;
+    left: 1100px;
+}
+.position1{
+    position: absolute;
+    top: 40px;
+    left: 700px;
+}
+.position2{
+    position: absolute;
+    top: 600px;
+    left: 1200px;
+}
+
+.login{
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-25%,-50%);
+    background-color: white;
+    height: 350px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0.1px 0.1px 10px rgb(199, 199, 199);
+    padding: 10px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+form input{
+    margin: 0px 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 0.5px solid rgb(199, 199, 199);
+    height: 35px;
+    width: 250px;
+}
+
+form div{
+    height: 35px;
+    width: 250px;
+}
+
+form a{
+    float: right;
+    font-style: italic;
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+button{
+    /* color: white; */
+    color: black;
+    /* background-color: rgb(0, 146, 204); */
+    background-color: yellowgreen;
+    border-radius: 10px;
+    /* border: 1px solid rgb(0, 146, 204); */
+    border: 1px solid yellowgreen;
+    width: 80px;
+    height: 40px;
+    margin-top: 40px;
+}
+
+button:hover{
+    /* background-color: rgb(0, 183, 255);
+    border: 1px solid rgb(0, 183, 255); */
+    background-color: rgb(182, 236, 72);
+    border: 1px solid rgb(182, 236, 72);
+}

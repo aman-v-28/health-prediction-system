@@ -1,0 +1,146 @@
+.slideshow{
+    display: grid;
+    grid-template-columns: 0.9fr 1fr 2fr;
+    margin-top: 3vh;
+  }
+  
+  .slider{
+    width: 400px;
+    height: 450px;
+    overflow: hidden;
+  }
+  
+  .slides{
+    width: 323%;
+    height: 450px;
+    display: flex;
+  }
+  
+  .slides input{
+    display: none;
+  }
+  
+  .slide{
+    transition: 1s;
+  }
+  
+  .slide img{
+    width: 400px;
+    height: 450px;
+  }
+  
+  .navigation-manual{
+    position: absolute;
+    width: 400px;
+    margin-top: -35px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .manual-btn{
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+  }
+  
+  .manual-btn:not(:last-child){
+    margin-right: 40px;
+  }
+  
+  .manual-btn:hover{
+    background-color: yellowgreen;
+  }
+  
+  #radio1:checked ~ .first{
+    margin-left: 0%;
+  }
+  #radio2:checked ~ .first{
+    margin-left: -30.97%;
+  }
+  #radio3:checked ~ .first{
+    margin-left: -61.9%;
+  }
+  #radio4:checked ~ .first{
+    margin-left: -93%;
+  }
+  
+  .welcome{
+    color: black;
+    margin-top: 15vh;
+    margin-left: 5vw;
+  }
+  
+  /* contact details  */
+  .detail{
+    display: flex;
+    margin-top: 3vh;
+    margin: 10vh;
+    margin-left: 0;
+  }
+  
+  .location{
+    height: 60px;
+    transform: skew(-40deg);
+    background-color: yellowgreen;
+    color: black;
+    font-size: 20px;
+    font-weight: 540;
+  }
+  
+  .location span{
+    transform: skew(40deg);
+  }
+  
+  .address{ 
+    width: 40%;
+    visibility: hidden;
+    position: relative;
+    animation-name: first;
+    animation-duration: 0.8s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes first{
+    0%{background: black;  left: 0px; visibility: visible;}
+    100%{left: 15vh; visibility: visible;}
+  }
+  
+  .phone{ 
+    width: 27%;
+    border-top: 4px solid black;
+    border-left: 4px solid black;
+    visibility: hidden;
+    position: relative;
+    margin-top: 15px;
+    animation: second;
+    animation-duration: 0.8s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes second {
+    0%{background: black; left: 400px; visibility: visible;}
+    100%{left: 0px;visibility: visible;}
+  }
+
+button{
+    cursor: pointer;
+    color: black;
+    background-color: white ;
+    border-color: black;
+    border-radius: 5px;
+    padding: 0.5em 2em;
+    font-size: 17px;
+    transition-property: all;
+    transition-duration: .2s;
+    transition-timing-function: ease-out;
+}
+
+button:hover, button:focus{
+    background-color: yellowgreen;
+    color: black;
+    border-color: yellowgreen; 
+}

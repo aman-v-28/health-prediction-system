@@ -1,0 +1,26 @@
+<div class="container_login">
+    <div class="class1">Healthify</div>
+    <div class="class2">
+        <div class="outer">
+            <div class="image">
+                <div class="fas fa-stethoscope"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<span class="fas fa-search blur position"></span>
+<span class="fas fa-list blur position1"></span>
+<span class="fas fa-list blur position2"></span>
+
+<div class="login">
+    <h3>Welcome Back!</h3>
+    <form>
+        <input type="text" placeholder="Email Id" formControlName="email">
+        <input type="password" placeholder="Password" formControlName="password">
+        <div>
+            <a href="">Forgot Password?</a>
+        </div>
+        <button routerLink="/dashboard">Login</button>
+    </form>
+</div>
+<router-outlet></router-outlet>

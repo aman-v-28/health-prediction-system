@@ -1,0 +1,61 @@
+.container{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1.3fr;
+    background-color: black;
+    z-index: 1;
+    color: yellowgreen;
+  }
+  
+  .center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .left{
+      font-size: 35px;
+      font-weight: bolder;
+  }
+  
+  menu{
+      display: flex;
+  }
+  
+  menu > li{
+      margin: 10px;
+      list-style: none;
+  }
+  
+  menu li a{
+      text-decoration: none;
+      color: yellowgreen;
+      transition-property: all;
+      transition-duration: .1s;
+      transition-timing-function: ease-out;
+  }
+  
+  menu li a:hover{
+      color: white;
+  }
+  
+  button{
+      cursor: pointer;
+      color: yellowgreen;
+      background-color: black;
+      border-color: yellowgreen;
+      border-radius: 5px;
+      padding: 0.5em 2em;
+      font-size: 17px;
+      transition-property: all;
+      transition-duration: .2s;
+      transition-timing-function: ease-out;
+  }
+  
+  button:hover, button:focus{
+      background-color: yellowgreen;
+      color: black; 
+  }
+  
