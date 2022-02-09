@@ -1,0 +1,31 @@
+<div class="container_login">
+    <div class="class1">Healthify</div>
+    <div class="class2">
+        <div class="outer">
+            <div class="image">
+                <div class="fas fa-stethoscope"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<span class="fas fa-search blur position"></span>
+<span class="fas fa-list blur position1"></span>
+<span class="fas fa-list blur position2"></span>
+
+<div class="login">
+    <h3>Welcome</h3>
+    <form>
+        <input type="text" placeholder="First Name" formControlName="Name">
+        <input type="text" placeholder="Last Name" formControlName="Name">
+        <input type="date" placeholder="Date of Birth" formControlName="Date">
+        <input type="text" placeholder="Contact Number" formControlName="Number" maxlength="10" />
+        <input type="text" placeholder="email" formControlName="email">
+        <input type="password" placeholder="Password" formControlName="password">
+        <input type="password" placeholder="Confirm Password" formControlName="password">
+
+
+        <button routerLink="/register">Register</button>
+
+    </form>
+</div>
+<router-outlet></router-outlet>

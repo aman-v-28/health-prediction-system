@@ -7,6 +7,8 @@ import { SlideshowComponent } from './slideshow/slideshow.component';
 import { LoginComponent } from './login/login.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { RegisterComponent } from './register/register.component';
+import { PredictionComponent } from './prediction/prediction.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     SlideshowComponent,
     LoginComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    RegisterComponent,
+    PredictionComponent
   ],
   imports: [
     BrowserModule,
