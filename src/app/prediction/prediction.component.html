@@ -1,40 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
+<app-navbar></app-navbar>
+<div class="dashboard">
     <div>
-        <h2>Choose your Symptoms</h2>
+        <app-sidebar></app-sidebar>
     </div>
-    <form class="Symptom">
-        <div class="sym">
-            Symptom 1: <input type="text" formControlName="Name">
-        </div>
-        <div class="sym">
-            Symptom 2: <input type="text" formControlName="Name">
-        </div>
-        <div class="sym">
-            Symptom 3: <input type="text" formControlName="Name">
-        </div>
-        <div class="sym">
-            Symptom 4: <input type="text" formControlName="Name">
-        </div>
-        <div class="sym">
-            Symptom 5: <input type="text" formControlName="Name">
-
-        </div>
+    <div>
         <div>
-            <button class="submit" type="submit">Submit</button>
+            <h2>Choose your Symptoms</h2>
         </div>
-    </form>
-</body>
-<!-- <button routerLink="/prediction"></button> Prediction  -->
-
-</html>
-<router-outlet></router-outlet>
+        <form class="Symptom">
+            <div class="sym">
+                Symptom 1: <input type="text" formControlName="Name">
+            </div>
+            <div class="sym">
+                Symptom 2: <input type="text" formControlName="Name">
+            </div>
+            <div class="sym">
+                Symptom 3: <input type="text" formControlName="Name">
+            </div>
+            <div class="sym">
+                Symptom 4: <input type="text" formControlName="Name">
+            </div>
+            <div class="sym">
+                Symptom 5: <input type="text" formControlName="Name">
+    
+            </div>
+            <div>
+                <button class="submit" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

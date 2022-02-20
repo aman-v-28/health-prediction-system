@@ -14,13 +14,13 @@
 
 <div class="login">
     <h3>Welcome Back!</h3>
-    <form>
-        <input type="text" placeholder="Email Id" formControlName="email">
-        <input type="password" placeholder="Password" formControlName="password">
+    <form [formGroup]="loginFormGroup" (ngSubmit) = "onLogin()">
+        <input type="text" placeholder="    Username" formControlName="username">
+        <input type="password" placeholder="    Password" formControlName="password">
         <div>
             <a href="">Forgot Password?</a>
         </div>
-        <button routerLink="/dashboard">Login</button>
+        {{result.msg}}
+        <button type="submit">Login</button>
     </form>
 </div>
-<router-outlet></router-outlet>

@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guard/auth.guard';
 import { LoginComponent } from './login/login.component';
 import { PredictionComponent } from './prediction/prediction.component';
+import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { SlideshowComponent } from './slideshow/slideshow.component';
 
 const routes: Routes = [
   { path: '', component: SlideshowComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: SidebarComponent },
+  { path: 'profile', component: ProfileComponent, canActivate:[AuthGuard]},
   { path: 'register', component: RegisterComponent },
-  { path: 'prediction', component: PredictionComponent }
+  { path: 'prediction', component: PredictionComponent, canActivate:[AuthGuard]}
 ];
 
 @NgModule({

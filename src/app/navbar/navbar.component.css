@@ -1,3 +1,8 @@
+.date{
+    /* direction: rtl; */
+    text-align: right;
+}
+
 .container{
     position: -webkit-sticky;
     position: sticky;
@@ -59,4 +64,12 @@
       background-color: yellowgreen;
       color: black; 
   }
-  
+
+  .profile{
+      color: white;
+      font-size: 14px;
+      font-family: sans-serif;
+      text-decoration: none;
+      margin: 0px 20px;
+      border-bottom: 1px solid white;
+  }

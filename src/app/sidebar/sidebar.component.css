@@ -1,9 +1,5 @@
-.sidebar{
-    display: grid;
-    grid-template-columns: 150px 1fr;
-}
-
 .menu{
+    width: 150px;
     position:sticky;
     top: 0px;
     height: 85vh;

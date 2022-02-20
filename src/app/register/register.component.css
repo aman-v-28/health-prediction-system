@@ -82,7 +82,7 @@
     transform: translate(-25%,-50%);
     background-color: white;
     height: 500px;
-    width: 500px;
+    width: 450px;
     border-radius: 10px;
     box-shadow: 0.1px 0.1px 10px rgb(199, 199, 199);
     padding: 10px;
@@ -101,7 +101,7 @@ form input{
     margin-top: 7px;
     border-radius: 5px;
     border: 0.5px solid rgb(199, 199, 199);
-    height: 3px;
+    height: 35px;
     width: 350px;
     font-size:15px;
 }
@@ -136,4 +136,11 @@ button:hover{
     border: 1px solid rgb(0, 183, 255); */
     background-color: rgb(182, 236, 72);
     border: 1px solid rgb(182, 236, 72);
+}
+
+.result{
+    font-size: 16px;
+    font-family: sans-serif;
+    margin-top: 10px;
+    text-align: center;
 }

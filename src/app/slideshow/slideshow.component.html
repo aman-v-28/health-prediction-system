@@ -40,7 +40,7 @@
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br /> Minima, hic eligendi sit
                     voluptatibus
                     illo rerum!</p>
-                <button>Register Now</button>
+                <button *ngIf="!authService.loggedIn()" routerLink="/register">Register Now</button>
             </div>
         </div>
     </section>
