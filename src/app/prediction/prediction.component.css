@@ -3,6 +3,13 @@
  padding: 0px;
 }
 
+.prediction{
+    height: 350px;
+    margin: 30px;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+}
+
 .dashboard{
     display: grid;
     grid-template-columns: 150px 1fr;
@@ -12,21 +19,26 @@
     background-color: white;
     border-radius: 10px;
     padding: 10px;
-    font-size: 20px;
     padding-top:25px;
 }
-h2{
-    margin-left:20px ;
-}
-.sym{
- margin: 14px;
 
+form input{
+    margin: 0px 10px;
+    border-radius: 5px;
+    border: 0.5px solid rgb(167, 167, 167);
+    height: 30px;
+    width: 200px;
+    padding: 0px 8px;
 }
+
+.sym{
+    margin: 14px;
+}
+
 .submit{
-    font-size:17px;
-    width: 100px;
+    width: 80px;
     height: 40px;
-    margin-left: 100px;
+    margin-left: 140px;
     margin-top: 20px;
     border-radius: 10px;
     color: black;
@@ -35,6 +47,11 @@ h2{
     background-color: yellowgreen;
 }
 .submit:hover{
-background-color: rgb(182, 236, 72);
-border: 1px solid rgb(182, 236, 72);
+    background-color: rgb(182, 236, 72);
+    border: 1px solid rgb(182, 236, 72);
+}
+
+.display_section{
+    width: auto;
+    margin: auto;
 }

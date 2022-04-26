@@ -20,24 +20,25 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.initForm();
   }
-  initForm(){
+  initForm() {
     this.loginFormGroup = new FormGroup({
-      username: new FormControl('',[Validators.required]),
-      password: new FormControl('',[Validators.required])
+      username: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required])
     })
   }
 
-  onLogin(){
-    this.authService.authenticateUser(this.loginFormGroup.value).subscribe((result:any) => {
-      if(result.success){
-        this.authService.storeUserData(result.token, result.user);
-        this.router.navigate(['/profile']);
-      }
-      else{
-        console.log(result);
-        this.result = result;
-      }
-    })
+  onLogin() {
+    if (this.loginFormGroup.valid) {
+      this.authService.authenticateUser(this.loginFormGroup.value).subscribe((result: any) => {
+        if (result.success) {
+          this.authService.storeUserData(result.token, result.user);
+          this.router.navigate(['/profile']);
+        }
+        else {
+          this.result = result;
+        }
+      })
+    }
   }
 
 }

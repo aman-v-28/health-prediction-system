@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
-import { timer } from 'rxjs';
-import { take } from 'rxjs/operators';
+import { ValidationService } from '../services/validation.service';
+import { LoadingService } from '../services/loading.service';
 
 @Component({
   selector: 'app-register',
@@ -12,45 +12,70 @@ import { take } from 'rxjs/operators';
 })
 export class RegisterComponent implements OnInit {
 
-  formGroup!: FormGroup;
-  result: any;
+  result!: any;
+  formGroup : FormGroup = new FormGroup({});
+  loading$ = this.loader.loading$
+
   constructor(
+    private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private validationService: ValidationService,
+    private loader: LoadingService
   ) { }
 
   ngOnInit(): void {
     this.initForm();
   }
 
-  initForm(){
-    this.formGroup = new FormGroup({
-      name: new FormControl('',[Validators.required]),
+  initForm() {
+    this.formGroup = this.fb.group({
+      name: new FormControl('', [Validators.required]),
       // date: new FormControl('',[Validators.required]),
-      number: new FormControl('',[Validators.required]),
-      email: new FormControl('',[Validators.required]),
-      username: new FormControl('',[Validators.required]),
-      password: new FormControl('',[Validators.required])
+      number: new FormControl('', [Validators.required]),
+      email: new FormControl('', {
+        validators: [Validators.required],
+        asyncValidators: [this.validationService.uniqueEmailValidator()]
+      }),
+      username: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
+      confirmPassword: new FormControl('', [Validators.required]),
+    },
+    {
+      validators: this.validationService.MatchPassword('password', 'confirmPassword'),
+      // validator: this.validationService.uniqueEmailValidator('email')
     })
   }
-  
-  onRegister(){
-    console.log(this.formGroup.value.name);
-    this.authService.registerUser(this.formGroup.value)
-    .subscribe(async (result:any) => {
-      // console.log(result)
-      this.result = result;
 
-      function delay(ms: number) {
-        return new Promise( resolve => setTimeout(resolve, ms) );
-      }
-      await delay(3000);
-      
-      if(result.success) {
-        this.router.navigate(['/login']);
-      } else {
-        this.router.navigate(['/register']);
-      }
-    })
+  get formgroup() {
+    return this.formGroup.controls;
+  }
+
+  numericOnly(event: any) {
+    const input = String.fromCharCode(event.keyCode);
+    if (!/^[0-9]*$/.test(input)) {
+      event.preventDefault();
+    }
+  }
+
+  onRegister() {
+    if (this.formGroup.valid) {
+      this.authService.registerUser(this.formGroup.value)
+        .subscribe(async (result: any) => {
+          // console.log(result)
+          this.result = result;
+
+          function delay(ms: number) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+          }
+          await delay(2000);
+
+          if (result.success) {
+            this.router.navigate(['/login']);
+          } else {
+            this.router.navigate(['/register']);
+          }
+        })
+    }
   }
 }

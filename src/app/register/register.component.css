@@ -1,3 +1,8 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
 .container_login{
     height: 100vh;
     display: grid;
@@ -49,12 +54,6 @@
     color: green;
 }
 
-/* .glyphicon{
-    font-size: 100px;
-    color: rgb(162, 0, 255);
-    font-weight: lighter;
-} */
-
 .blur{
     color: rgba(209, 46, 209, 0.1);
 }
@@ -81,12 +80,12 @@
     left: 20%;
     transform: translate(-25%,-50%);
     background-color: white;
-    height: 500px;
-    width: 450px;
+    height: 540px;
+    width: 420px;
     border-radius: 10px;
     box-shadow: 0.1px 0.1px 10px rgb(199, 199, 199);
     padding: 10px;
-    font-size: 30px;
+    font-size: 11px;
 }
 
 form{
@@ -96,26 +95,19 @@ form{
     margin-top: 20px;
 }
 
-form input{
+/* form mat-form-field input{
     margin: 0px 10px;
     margin-top: 7px;
     border-radius: 5px;
     border: 0.5px solid rgb(199, 199, 199);
-    height: 35px;
+    height: -35px;
     width: 350px;
     font-size:15px;
-}
+    padding: 0px 8px;
+} */
 
-form div{
-    height: 35px;
-    width: 250px;
-}
-
-form a{
-    float: right;
-    font-style: italic;
-    margin-top: 8px;
-    font-size: 12px;
+mat-form-field{
+    width: 310px;
 }
 
 button{
@@ -139,8 +131,9 @@ button:hover{
 }
 
 .result{
-    font-size: 16px;
+    font-size: 13px;
     font-family: sans-serif;
     margin-top: 10px;
+    margin-bottom: -10px;
     text-align: center;
 }

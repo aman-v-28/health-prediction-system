@@ -3,30 +3,40 @@
     <div>
         <app-sidebar></app-sidebar>
     </div>
-    <div>
-        <div>
-            <h2>Choose your Symptoms</h2>
-        </div>
-        <form class="Symptom">
-            <div class="sym">
-                Symptom 1: <input type="text" formControlName="Name">
-            </div>
-            <div class="sym">
-                Symptom 2: <input type="text" formControlName="Name">
-            </div>
-            <div class="sym">
-                Symptom 3: <input type="text" formControlName="Name">
-            </div>
-            <div class="sym">
-                Symptom 4: <input type="text" formControlName="Name">
-            </div>
-            <div class="sym">
-                Symptom 5: <input type="text" formControlName="Name">
-    
-            </div>
+    <div class="prediction">
+        <div class="symptoms_section">
             <div>
-                <button class="submit" type="submit">Submit</button>
+                <h2>Enter your Symptoms</h2>
             </div>
-        </form>
+            <form class="Symptom" [formGroup]="predictFormGroup" (ngSubmit)="onPredict()">
+                <div class="sym">
+                    Symptom 1: <input type="text" formControlName="symptom1">
+                </div>
+                <div class="sym">
+                    Symptom 2: <input type="text" formControlName="symptom2">
+                </div>
+                <div class="sym">
+                    Symptom 3: <input type="text" formControlName="symptom3">
+                </div>
+                <div class="sym">
+                    Symptom 4: <input type="text" formControlName="symptom4">
+                </div>
+                <div class="sym">
+                    Symptom 5: <input type="text" formControlName="symptom5">
+
+                </div>
+                <div>
+                    <button class="submit" type="submit">Predict</button>
+                </div>
+            </form>
+        </div>
+        <div class="display_section">
+            <mat-spinner [mode]="'indeterminate'" [diameter]="60" *ngIf="loading$ | async; else display"
+                color="primary">
+            </mat-spinner>
+            <ng-template #display>
+                {{predictedDisease}}
+            </ng-template>
+        </div>
     </div>
 </div>

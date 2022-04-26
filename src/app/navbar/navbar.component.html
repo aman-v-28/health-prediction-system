@@ -6,15 +6,15 @@
     <div class="middle center">
         <menu>
             <li><a routerLink="/">HOME</a></li>
-            <li><a *ngIf="authService.loggedIn()" href="https://">DOCTORS</a></li>
-            <li><a href="https://">BLOGS</a></li>
-            <li><a href="https://">ABOUT US</a></li>
-            <li><a href="https://">CONTACT</a></li>
+            <!-- <li><a *ngIf="authService.loggedIn()">DOCTORS</a></li> -->
+            <li><a>BLOGS</a></li>
+            <li><a>ABOUT</a></li>
+            <li><a>CONTACT</a></li>
         </menu>
     </div>
     <div class="right center">
         <button *ngIf="!authService.loggedIn()" routerLink="/login">LOGIN</button>
-        <a class="profile" *ngIf="authService.loggedIn()" routerLink="/profile">{{user.name}}</a>
+        <a class="profile" *ngIf="authService.loggedIn() && user !== undefined" routerLink="/profile">{{user.name}}</a>
         <button *ngIf="authService.loggedIn()" (click) = "onLogout()" routerLink="/">LOGOUT</button>
     </div>
 </header>

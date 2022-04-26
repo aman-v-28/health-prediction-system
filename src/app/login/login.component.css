@@ -12,6 +12,7 @@
     line-height: 2;
     /* color: rgb(0, 146, 204); */
     color: yellowgreen;
+    cursor: pointer;
 }
 
 .class2{
@@ -86,6 +87,7 @@
     border-radius: 10px;
     box-shadow: 0.1px 0.1px 10px rgb(199, 199, 199);
     padding: 10px;
+    font-size: 12px;
 }
 
 form{
@@ -95,12 +97,17 @@ form{
     margin-top: 20px;
 }
 
-form input{
+/* form input{
     margin: 0px 30px;
     margin-top: 20px;
     border-radius: 5px;
     border: 0.5px solid rgb(199, 199, 199);
     height: 35px;
+    width: 250px;
+    padding: 0px 8px;
+} */
+
+mat-form-field{
     width: 250px;
 }
 
@@ -112,7 +119,7 @@ form div{
 form a{
     float: right;
     font-style: italic;
-    margin-top: 8px;
+    margin-top: -8px;
     font-size: 12px;
 }
 
@@ -134,4 +141,12 @@ button:hover{
     border: 1px solid rgb(0, 183, 255); */
     background-color: rgb(182, 236, 72);
     border: 1px solid rgb(182, 236, 72);
+}
+
+.result{
+    font-size: 14px;
+    font-family: sans-serif;
+    margin-top: 10px;
+    margin-bottom: -20px;
+    text-align: center;
 }

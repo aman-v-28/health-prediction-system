@@ -1,5 +1,5 @@
 <div class="container_login">
-    <div class="class1">Healthify</div>
+    <div class="class1" routerLink="/">Healthify</div>
     <div class="class2">
         <div class="outer">
             <div class="image">
@@ -14,13 +14,23 @@
 
 <div class="login">
     <h3>Welcome Back!</h3>
-    <form [formGroup]="loginFormGroup" (ngSubmit) = "onLogin()">
-        <input type="text" placeholder="    Username" formControlName="username">
-        <input type="password" placeholder="    Password" formControlName="password">
+    <form [formGroup]="loginFormGroup" (ngSubmit)="onLogin()">
+        <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput required type="text" formControlName="username">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput required type="password" formControlName="password">
+        </mat-form-field>
+
         <div>
             <a href="">Forgot Password?</a>
         </div>
-        {{result.msg}}
+        <div class="result" *ngIf="result !== undefined">
+            {{result.msg}}
+        </div>
         <button type="submit">Login</button>
     </form>
 </div>

@@ -1,5 +1,5 @@
 <div class="container_login">
-    <div class="class1">Healthify</div>
+    <div class="class1" routerLink="/">Healthify</div>
     <div class="class2">
         <div class="outer">
             <div class="image">
@@ -13,16 +13,47 @@
 <span class="fas fa-list blur position2"></span>
 
 <div class="login">
-    <h5>Welcome {{formGroup.value.name}}</h5>
-    <form [formGroup]="formGroup" (ngSubmit) = "onRegister()">
-        <input type="text" placeholder="    Name" formControlName="name">
+    <h2>Welcome {{formGroup.value.name}}</h2>
+    <form [formGroup]="formGroup" (ngSubmit)="onRegister()">
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput required type="text" placeholder="Jack Aranda" formControlName="name">
+        </mat-form-field>
+
         <!-- <input type="date" placeholder="Date of Birth" formControlName="date"> -->
-        <input type="text" placeholder="    Contact Number" formControlName="number" maxlength="10" />
-        <input type="text" placeholder="    Email" formControlName="email">
-        <input type="text" placeholder="    Username" formControlName="username">
-        <input type="password" placeholder="    Password" formControlName="password">
-        <input type="password" placeholder="    Confirm Password" formControlName="password">
-        <div class="result">{{result.msg}}</div>
+        <mat-form-field appearance="outline">
+            <mat-label>Contact Number</mat-label>
+            <input matInput required minlength="10" maxlength="10" type="tel" (keypress)="numericOnly($event)" formControlName="number">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput required type="text" placeholder="jackaranda@gmail.com" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" formControlName="email">
+            <mat-spinner matSuffix [mode]="'indeterminate'" [diameter]="20" *ngIf="loading$ | async" color="primary"></mat-spinner>
+            <mat-error *ngIf="formgroup.email.errors?.emailExists">
+                This email address is already registered. Please use another one.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput required type="text" pattern="^[A-Za-z][A-Za-z0-9_]{7,29}$" placeholder="jackaranda" formControlName="username">
+            <mat-hint>At least 8 characters (Should start with an alphabet. Only use alphabet, number, underscore)</mat-hint>
+        </mat-form-field>
+<br>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput required type="password" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$" formControlName="password">
+            <mat-hint>At least 8 characters (At least one lowercase and uppercase)</mat-hint>
+        </mat-form-field>
+<br>
+        <mat-form-field appearance="outline">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput required type="password" formControlName="confirmPassword">
+        </mat-form-field>
+
+
+        <div class="result" *ngIf="result !== undefined">{{result.msg}}</div>
         <button type="submit">Register</button>
     </form>
 </div>
